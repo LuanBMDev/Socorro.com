@@ -14,9 +14,11 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
-import com.google.firebase.auth.ktx.auth // KTX extension
-import com.google.firebase.firestore.ktx.firestore // Firestore KTX
-import com.google.firebase.ktx.Firebase
+import com.google.firebase.firestore.FirebaseFirestore
+
+//import com.google.firebase.auth.ktx.auth // KTX extension
+//import com.google.firebase.firestore.ktx.firestore // Firestore KTX
+//import com.google.firebase.ktx.Firebase
 
 class MainActivity : AppCompatActivity() {
     private lateinit var usuarioET: EditText
@@ -27,7 +29,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var progressBarLogin: ProgressBar
 
     private lateinit var auth: FirebaseAuth
-    private val db = Firebase.firestore
+    private val db = FirebaseFirestore.getInstance()
 
     private val TAG = "MainActivity"
 
@@ -42,7 +44,7 @@ class MainActivity : AppCompatActivity() {
         enableEdgeToEdge()
         setContentView(R.layout.activity_main)
 
-        auth = Firebase.auth
+        auth = FirebaseAuth.getInstance()
 
         usuarioET = findViewById(R.id.usuario)
         senhaET = findViewById(R.id.senha)

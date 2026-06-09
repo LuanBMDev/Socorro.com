@@ -12,8 +12,8 @@ import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.ktx.auth
-import com.google.firebase.ktx.Firebase
+//import com.google.firebase.auth.ktx.auth
+//import com.google.firebase.ktx.Firebase
 
 class Recuperar_senha : AppCompatActivity() {
     private lateinit var emailET: EditText // Renamed for clarity
@@ -29,7 +29,7 @@ class Recuperar_senha : AppCompatActivity() {
 
         setContentView(R.layout.activity_recuperar_senha)
 
-        auth = Firebase.auth
+        auth = FirebaseAuth.getInstance()
 
         emailET = findViewById(R.id.emailETC)
         enviarEmailBT = findViewById(R.id.salvar)

@@ -16,10 +16,10 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.ktx.auth
+//import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.FirebaseFirestore
-import com.google.firebase.firestore.ktx.firestore
-import com.google.firebase.ktx.Firebase
+//import com.google.firebase.firestore.ktx.firestore
+//import com.google.firebase.ktx.Firebase
 
 
 data class SupportTicket(
@@ -54,8 +54,8 @@ class GeradorTicket : AppCompatActivity() {
         enableEdgeToEdge()
         setContentView(R.layout.activity_gerador_ticket)
 
-        auth = Firebase.auth
-        db = Firebase.firestore
+        auth = FirebaseAuth.getInstance()
+        db = FirebaseFirestore.getInstance()
 
         editTextMotive = findViewById(R.id.editTextMotive)
         spinnerCompany = findViewById(R.id.spinnerCompany)

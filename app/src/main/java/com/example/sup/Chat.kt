@@ -15,12 +15,13 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
-import com.google.firebase.auth.ktx.auth
+//import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.ListenerRegistration
 import com.google.firebase.firestore.Query
-import com.google.firebase.firestore.ktx.firestore
-import com.google.firebase.ktx.Firebase
+//import com.google.firebase.firestore.ktx.firestore
+//import com.google.firebase.ktx.Firebase
+
 
 class Chat : AppCompatActivity() {
 
@@ -49,9 +50,9 @@ class Chat : AppCompatActivity() {
         enableEdgeToEdge()
         setContentView(R.layout.activity_chat)
 
-        auth = Firebase.auth
-        db = Firebase.firestore
-        currentUser = auth.currentUser
+        auth = FirebaseAuth.getInstance()
+        db = FirebaseFirestore.getInstance()
+        currentUser = auth.currentUser     // essa fica igual, não muda
 
         ticketId = intent.getStringExtra("TICKET_ID")
 

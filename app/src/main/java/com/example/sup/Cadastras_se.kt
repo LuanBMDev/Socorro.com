@@ -16,10 +16,9 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 // Remove unused imports like Api, Task, AuthResult if not directly used
 import com.google.firebase.auth.FirebaseAuth
+//import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
-import com.google.firebase.auth.ktx.auth
-import com.google.firebase.firestore.ktx.firestore
-import com.google.firebase.ktx.Firebase
+import com.google.firebase.firestore.FirebaseFirestore
 
 class Cadastras_se : AppCompatActivity() {
 
@@ -32,7 +31,7 @@ class Cadastras_se : AppCompatActivity() {
     private lateinit var progressBar: ProgressBar
 
     private lateinit var auth: FirebaseAuth
-    private val db = Firebase.firestore
+    private val db = FirebaseFirestore.getInstance()
 
 
     private val TAG = "Cadastras_se"
@@ -49,7 +48,7 @@ class Cadastras_se : AppCompatActivity() {
         setContentView(R.layout.activity_cadastras_se)
 
 
-        auth = Firebase.auth
+        auth = FirebaseAuth.getInstance()
 
 
         emailCTV = findViewById(R.id.emailCTV)

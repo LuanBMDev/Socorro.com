@@ -17,10 +17,10 @@ import androidx.core.view.WindowInsetsCompat
 import com.google.firebase.auth.EmailAuthProvider
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
-import com.google.firebase.auth.ktx.auth
+//import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.FirebaseFirestore
-import com.google.firebase.firestore.ktx.firestore
-import com.google.firebase.ktx.Firebase
+//import com.google.firebase.firestore.ktx.firestore
+//import com.google.firebase.ktx.Firebase
 
 class Dados_da_conta : AppCompatActivity() {
     private lateinit var usuarioET: EditText // Assuming this displays email
@@ -42,8 +42,8 @@ class Dados_da_conta : AppCompatActivity() {
         setContentView(R.layout.activity_dados_da_conta) // Call this early
 
         // Initialize Firebase
-        auth = Firebase.auth
-        db = Firebase.firestore
+        auth = FirebaseAuth.getInstance()
+        db = FirebaseFirestore.getInstance()
         currentUser = auth.currentUser
 
         // Initialize Views AFTER setContentView

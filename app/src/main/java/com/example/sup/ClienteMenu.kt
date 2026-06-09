@@ -13,11 +13,11 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.ktx.auth
+//import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.Query
-import com.google.firebase.firestore.ktx.firestore
-import com.google.firebase.ktx.Firebase
+//import com.google.firebase.firestore.ktx.firestore
+//import com.google.firebase.ktx.Firebase
 
 class ClienteMenu : AppCompatActivity() {
     private lateinit var solicitarAtendimentoBT: Button
@@ -38,8 +38,8 @@ class ClienteMenu : AppCompatActivity() {
         enableEdgeToEdge()
         setContentView(R.layout.activity_cliente_menu)
 
-        auth = Firebase.auth
-        db = Firebase.firestore
+        auth = FirebaseAuth.getInstance()
+        db = FirebaseFirestore.getInstance()
 
         solicitarAtendimentoBT = findViewById(R.id.SolicitarA)
         logoutBT = findViewById(R.id.buttonLogout)

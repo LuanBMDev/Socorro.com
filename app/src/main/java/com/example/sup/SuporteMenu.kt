@@ -10,12 +10,12 @@ import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.ktx.auth
+//import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.ListenerRegistration
 import com.google.firebase.firestore.Query
-import com.google.firebase.firestore.ktx.firestore
-import com.google.firebase.ktx.Firebase
+//import com.google.firebase.firestore.ktx.firestore
+//import com.google.firebase.ktx.Firebase
 
 data class SupportItem(
     val id: String = "",
@@ -45,8 +45,8 @@ class SuporteMenu : AppCompatActivity() {
         listView = findViewById(R.id.listView)
         logoutBT = findViewById(R.id.buttonLogout)
         cabecarioIV = findViewById(R.id.cabecario)
-        db = Firebase.firestore
-        auth = Firebase.auth
+        db = FirebaseFirestore.getInstance()
+        auth = FirebaseAuth.getInstance()
 
         supportItemsAdapter = SuporteAdapter(this, supportItemList,
             onOpenChatClicked = { selectedItem ->

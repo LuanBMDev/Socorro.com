@@ -122,6 +122,7 @@
         android:paddingTop="12dp"
         android:paddingBottom="12dp"
         android:text="Cadastrar"
+        android:textColorLink="@color/botoes"
         app:iconTint="@color/botoes"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
